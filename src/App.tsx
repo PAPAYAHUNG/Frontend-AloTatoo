@@ -1,7 +1,7 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import { Counter } from "./features/counter/Counter";
+import "./App.css";
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
           </a>
           <span>, </span>
           <a
-            className="App-link"
+            className="text-3xl font-bold underline text-red-400 "
             href="https://redux-toolkit.js.org/"
             target="_blank"
             rel="noopener noreferrer"
@@ -56,3 +56,4 @@ function App() {
 }
 
 export default App;
+
