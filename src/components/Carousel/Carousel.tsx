@@ -1,10 +1,11 @@
 import React, { useRef, useState } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+
+import { Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
-
-import { Pagination } from "swiper";
+import "swiper/css/navigation";
 import ListCarousel from "./constants";
 import CarouselItem from "./CarouselItem";
 const Carousel = () => {
@@ -26,7 +27,8 @@ const Carousel = () => {
          pagination={{
           dynamicBullets: true,
         }}
-        modules={[Pagination]}
+        navigation={true}
+        modules={[Pagination,Navigation]}
         className="mySwiper"
       >
         {ListCarousel.map((item) => {
@@ -39,3 +41,5 @@ const Carousel = () => {
 };
 
 export default Carousel;
+
+

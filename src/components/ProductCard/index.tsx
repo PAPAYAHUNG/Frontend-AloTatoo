@@ -1,12 +1,14 @@
 import React from "react";
 import PromotionBadge from "./PromotionBadge";
 
-const ProductCard = () => {
+const ProductCard = ({data}:any) => {
   return (
     <div className="max-w-sm rounded shadow-lg relative">
       <img
         className="w-full rounded-t-md "
-        src="https://images8.alphacoders.com/484/thumbbig-484717.webp"
+        // src="https://images8.alphacoders.com/484/thumbbig-484717.webp"
+        src="https://c4.wallpaperflare.com/wallpaper/848/150/360/nature-landscape-aerial-view-mountains-wallpaper-thumb.jpg"
+        // src={data?.url ||"https://images8.alphacoders.com/484/thumbbig-484717.webp"}
         alt="Sunset in the mountains"
       />
       <div className="px-6 py-4">
