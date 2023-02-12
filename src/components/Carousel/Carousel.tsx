@@ -16,20 +16,8 @@ const Carousel = () => {
   const renderCarouselContent = (item: any) => {
     return (
       <div className="relative">
-        {/* <img
-          src={item.image}
-          alt={item.id}
-          className="max-h-[600px] object-cover"
-        /> */}
         <LazyImage image={item}/>
-        {/* <LazyLoadImage
-        alt={item.image}
-        effect="blur"
-        src={item.image}
-        className="max-h-[600px] object-cover"
-         /> */}
-      
-        <div className="absolute top-40 left-40 text-4xl font-bold">{item.content}</div>
+        <div className="absolute top-40 left-40 text-4xl font-bold text-white">{item.content}</div>
       </div>
     );
   };

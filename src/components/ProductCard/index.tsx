@@ -1,12 +1,15 @@
 import React from "react";
 import PromotionBadge from "./PromotionBadge";
 
+// text-gray-900 border border-gray-300  bg-gray-50 
+// dark:bg-gray-700 dark:text-white dark:border-gray-600 dark:placeholder-gray-400 
 const ProductCard = ({data}:any) => {
   return (
-    <div className="max-w-sm rounded-md shadow-lg relative bg-slate-400">
+    <div className="max-w-sm rounded-md shadow-lg relative 
+    border border-gray-300 
+    ">
       <img
         className="w-full rounded-t-md "
-        // src="https://images8.alphacoders.com/484/thumbbig-484717.webp"
         src="https://c4.wallpaperflare.com/wallpaper/848/150/360/nature-landscape-aerial-view-mountains-wallpaper-thumb.jpg"
         // src={data?.url ||"https://images8.alphacoders.com/484/thumbbig-484717.webp"}
         alt="Sunset in the mountains"

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import BrowseMore from "../../components/BrowseMore/BrowseMore";
 // import Carousel from "../../components/Carousel/Carousel";
 import Container from "../../components/Container/Container";
@@ -8,6 +8,8 @@ import MultipleItemContainer from "../../components/MultipleItemContainer/Multip
 import Navbar from "../../components/Navbar/Navbar";
 import ProductCard from "../../components/ProductCard";
 import FilterContainer from "../../DesignSystems/Components/FilterContainer/FilterContainer";
+import styled from "styled-components";
+import SearchInput from "../../components/SeachInput/SearchInput";
 
 const Carousel = React.lazy(() => import("../../components/Carousel/Carousel"));
 
@@ -33,7 +35,13 @@ const Home = () => {
       <Carousel />
       <Container>
         <CustomContainer data={product} />
-        <FilterContainer/>
+        {/* <StyledOptionCarouselContainer>
+          <FilterContainer />
+        </StyledOptionCarouselContainer> */}
+    <div className="mt-3">
+    <SearchInput />
+    </div>
+        <FilterContainer />
 
         <MultipleItemContainer data={product} />
         <Listing data={product} />

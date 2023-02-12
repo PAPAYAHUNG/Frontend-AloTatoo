@@ -10,6 +10,7 @@ import "swiper/css/pagination";
 // import required modules
 import { Navigation, Pagination } from "swiper";
 import styled from "styled-components";
+import { LeftOutlined, RightOutlined } from "@ant-design/icons";
 
 const listFilter = [
   { filter: "Traditional", id: 1, url: "/", value: "traditional", image: "" },
@@ -27,8 +28,15 @@ const listFilter = [
 ];
 
 const StyledSwiper = styled(Swiper)`
-  .swiper {
-    width: 100%;
+    width: 90%;
+    height: 100%;
+  /* .swiper {
+    width: 80%;
+    height: 100%;
+  } */
+
+  .swiper.fitler-container {
+    width: 80%;
     height: 100%;
   }
 
@@ -41,7 +49,7 @@ const StyledSwiper = styled(Swiper)`
     text-align: center;
     font-size: 18px;
     background: #fff;
-width: fit-content;
+    width: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,6 +60,10 @@ width: fit-content;
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .swiper-button-disabled{
+    display: none;
   }
 `;
 
@@ -64,30 +76,53 @@ const FilterContainer: FC = () => {
   const renderSwiperSlide = () => {
     return listFilter.map((item: any) => (
       <SwiperSlide key={item?.id}>
-      <div className="p-2 border border-sky-500 rounded-lg bg-red-800" >{item?.filter}</div>
+        <div className="p-2 border border-sky-500  rounded-lg bg-white">
+          {item?.filter}
+        </div>
       </SwiperSlide>
     ));
   };
 
   return (
-    <>
+    <div className="fitler-container relative ">
+      <div
+        className="swiper-button flex items-center justify-center 
+      bg-black-rgba
+      absolute top-1/2 transform -translate-y-1/2
+      image-swiper-button-next  p-2 w-10 h-10 right-[15px]
+      z-10
+      rounded-full cursor-pointer "
+      >
+        <RightOutlined />
+      </div>
+      <div
+        className="swiper-button flex items-center justify-center 
+      bg-black-rgba 
+      absolute top-1/2 transform -translate-y-1/2
+       p-2 w-10 h-10 left-[15px]
+      z-10
+      rounded-full cursor-pointer image-swiper-button-prev "
+      >
+        <LeftOutlined />
+      </div>
       <StyledSwiper
-        slidesPerView='auto'
+        slidesPerView="auto"
         spaceBetween={30}
         pagination={{
           clickable: true,
         }}
         navigation={{
-          prevEl:'.prev-element',
-          nextEl:'.next-element',
-          disabledClass:'dissable-element'
+          nextEl: ".image-swiper-button-next",
+          prevEl: ".image-swiper-button-prev",
+          disabledClass: "swiper-button-disabled",
         }}
-        modules={[ Navigation]}
+        // autoplay={false}
+        modules={[Navigation]}
         className="myStyledSwiper"
       >
         {renderSwiperSlide()}
       </StyledSwiper>
-    </>
+    </div>
   );
 };
 
