@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import BrowseMore from "../../components/BrowseMore/BrowseMore";
 // import Carousel from "../../components/Carousel/Carousel";
 import Container from "../../components/Container/Container";
+import CustomContainer from "../../DesignSystems/Components/CustomContainer/CustomContainer";
 import Listing from "../../components/Listing/Listing";
 import MultipleItemContainer from "../../components/MultipleItemContainer/MultipleItemContainer";
 import Navbar from "../../components/Navbar/Navbar";
 import ProductCard from "../../components/ProductCard";
+import FilterContainer from "../../DesignSystems/Components/FilterContainer/FilterContainer";
 
 const Carousel = React.lazy(() => import("../../components/Carousel/Carousel"));
 
@@ -30,7 +32,9 @@ const Home = () => {
       <Navbar />
       <Carousel />
       <Container>
-        <ProductCard />
+        <CustomContainer data={product} />
+        <FilterContainer/>
+
         <MultipleItemContainer data={product} />
         <Listing data={product} />
         <div className="flex items-center justify-center">

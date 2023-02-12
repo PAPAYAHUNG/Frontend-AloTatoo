@@ -5,18 +5,30 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
+// import { LazyLoadImage } from "react-lazy-load-image-component";
 import "swiper/css/navigation";
 import ListCarousel from "./constants";
 import CarouselItem from "./CarouselItem";
+import LazyImage from "../LazyImage/LazyImage";
+
 const Carousel = () => {
+
   const renderCarouselContent = (item: any) => {
     return (
       <div className="relative">
-        <img
+        {/* <img
           src={item.image}
           alt={item.id}
           className="max-h-[600px] object-cover"
-        />
+        /> */}
+        <LazyImage image={item}/>
+        {/* <LazyLoadImage
+        alt={item.image}
+        effect="blur"
+        src={item.image}
+        className="max-h-[600px] object-cover"
+         /> */}
+      
         <div className="absolute top-40 left-40 text-4xl font-bold">{item.content}</div>
       </div>
     );

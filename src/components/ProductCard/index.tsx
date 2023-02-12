@@ -3,7 +3,7 @@ import PromotionBadge from "./PromotionBadge";
 
 const ProductCard = ({data}:any) => {
   return (
-    <div className="max-w-sm rounded shadow-lg relative">
+    <div className="max-w-sm rounded-md shadow-lg relative bg-slate-400">
       <img
         className="w-full rounded-t-md "
         // src="https://images8.alphacoders.com/484/thumbbig-484717.webp"

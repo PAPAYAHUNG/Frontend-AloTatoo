@@ -21,7 +21,7 @@ const StyledSwiper = styled(Swiper)`
   .swiper-wrapper {
     padding-bottom: 30px;
   }
-  
+
   .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -41,7 +41,15 @@ const StyledSwiper = styled(Swiper)`
   }
 `;
 
-const MultipleItemContainer: FC<{ data: any }> = ({ data }) => {
+interface IMultipleItemContainer {
+  data: any;
+  itemsPerView?: number | "auto" | undefined
+}
+
+const MultipleItemContainer: FC<IMultipleItemContainer> = ({
+  data,
+  itemsPerView,
+}) => {
   const renderSwiperSlide = () => {
     return data.map((item: any) => (
       <SwiperSlide key={item.name}>
@@ -53,7 +61,7 @@ const MultipleItemContainer: FC<{ data: any }> = ({ data }) => {
   return (
     <>
       <StyledSwiper
-        slidesPerView={3}
+        slidesPerView={itemsPerView} 
         spaceBetween={30}
         pagination={{
           clickable: true,
@@ -66,6 +74,10 @@ const MultipleItemContainer: FC<{ data: any }> = ({ data }) => {
       </StyledSwiper>
     </>
   );
+};
+
+MultipleItemContainer.defaultProps = {
+  itemsPerView: 3,
 };
 
 export default MultipleItemContainer;
